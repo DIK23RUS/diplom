@@ -1,0 +1,85 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation__button {
+    border: none;
+    background-image: url("../images/menu_btn.png");
+    background-repeat: no-repeat;
+    background-color: #fbfbfb;
+    width: 26px;
+    height: 18px;
+    margin-top: 30px;
+    cursor: pointer
+}
+
+.navigation__menu {
+    display: none;
+}
+
+.menu-open .navigation__menu {
+    display: inline-block;
+    list-style: none;
+    margin-top: 70px;
+    margin-left: -30px;
+    padding: 0;
+    width: 0;
+}
+
+.navigation__item {
+    color: #000000;
+    font-weight: bold;
+}
+
+.navigation__item a:hover {
+    color: #ff2f96;
+}
+
+.for-call {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-top: 26px;
+    color: #000000;
+    font-family: Roboto, sans-serif;
+}
+
+.phone-number__link {
+    font-style: normal;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.3px;
+}
+
+.phone-number__link:hover {
+    color: #ff2f96;
+}
+
+.order-call {
+    margin-left: 33px;
+}
+
+.order-call__button {
+    height: 26px;
+    width: 26px;
+    cursor: pointer
+}
+
+.order-call__button_style {
+    border: none;
+    background-image: url("../images/order-call-btn.png");
+    background-repeat: no-repeat;
+}
+
+.order-call__text {
+    display: none;
+    cursor: pointer
+}

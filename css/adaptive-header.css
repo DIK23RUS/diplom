@@ -1,0 +1,83 @@
+@media (min-width: 1024px) {
+    .navigation__button {
+        background-image: url("../images/menu_btn_tablet.png");
+        background-repeat: no-repeat;
+        background-color: #fbfbfb;
+        width: 45px;
+        height: 32px;
+        margin-top: 37px;
+    }
+
+    .menu-open .navigation__menu {
+        margin-left: -50px;
+        margin-top: 120px;
+    }
+
+    .navigation__item {
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .for-call {
+        margin-top: 30px;
+    }
+
+    .phone-number {
+        padding-top: 10px;
+    }
+
+    .phone-number__link {
+        font-size: 25px;
+        letter-spacing: 0.1px;
+    }
+
+    .order-call {
+        margin-left: 28px;
+    }
+
+    .order-call__button {
+        height: auto;
+        width: 208px;
+    }
+
+    .order-call__button_style {
+        background-image: none;
+        background-color: #ffffff;
+        border: 1px solid #f82370;
+    }
+
+    .order-call__text {
+        display: block;
+        padding: 12px;
+    }
+
+    .order-call__text_style {
+        color: #f53f4f;
+    }
+}
+
+@media (min-width: 1920px) {
+    
+    .navigation__button {
+        display: none;
+    }
+    
+    .navigation__menu {
+        display: inline-block;
+        margin-top: 40px;
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .navigation__item {
+        font-size: 16px;
+        display: inline;
+        margin-right: 28px;
+        font-weight: normal;
+    }
+    
+    .navigation__item a:hover {
+        color: #fc557c;
+        text-decoration: underline;
+    }
+}
