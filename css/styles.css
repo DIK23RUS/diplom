@@ -65,6 +65,14 @@ body.modal-active {
     overflow: hidden;
 }
 
+@media (min-width: 768px) {
+    body {
+        max-width: 768px;
+        margin: 0 auto;
+        padding: 0 50px;
+    }
+}
+
 @media (min-width: 1024px) {
     body {
         max-width: 1024px;

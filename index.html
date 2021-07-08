@@ -5,6 +5,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link rel="apple-touch-icon" sizes="76x76" href="favicon_package_v0.16/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_package_v0.16/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_package_v0.16/favicon-16x16.png">
+    <link rel="manifest" href="favicon_package_v0.16/site.webmanifest">
+    <link rel="mask-icon" href="favicon_package_v0.16/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
     <title>Frontend-разработка и веб-верстка</title>
 
     <link rel="stylesheet" type="text/css" href="bootstrap-5.0.1-dist/css/bootstrap.css">
@@ -29,15 +37,15 @@
             <button aria-label="Открыть меню" class="navigation__button js-menu" type="button"></button>
             <ul class="navigation__menu">
                 <li class="navigation__item">
-                    <a href="#">Услуги</a>
+                    <a href="#services">Услуги</a>
                 </li>
 
                 <li class="navigation__item">
-                    <a href="#">Портфолио</a>
+                    <a href="#example">Портфолио</a>
                 </li>
 
                 <li class="navigation__item">
-                    <a href="#">Стоимость</a>
+                    <a href="#price">Стоимость</a>
                 </li>
             </ul>
         </nav>
@@ -153,7 +161,7 @@
             </picture>
         </section>
 
-        <section class="services services_position services_style">
+        <section id="services" class="services services_position services_style">
             <h2 class="services__title services__title_position">Что я делаю</h2>
 
             <ul class="services-list services-list_style services-list_position">
@@ -195,7 +203,7 @@
             </button>
         </section>
 
-        <section class="example example_position">
+        <section id="example" class="example example_position">
             <h2 class="example__title example__title_position">
                 Примеры моих работ
             </h2>
@@ -236,7 +244,7 @@
             </button>
         </section>
 
-        <section class="price price_position">
+        <section id="price" class="price price_position">
             <div class="container-things">
                 <span class="container-things__element-1">{ }</span>
                 <span class="container-things__element-2">&lt;div&gt;</span>
@@ -358,6 +366,14 @@
                     },
                     {
                         breakpoint: 1024,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 1,
+                            dots: true
+                        }
+                    },
+                    {
+                        breakpoint: 768,
                         settings: {
                             slidesToShow: 1,
                             slidesToScroll: 1,
