@@ -51,6 +51,9 @@
         flex-wrap: wrap;
         align-items: baseline;
         max-height: 390px;
+        background-image: url("../images/main-bg-mobile.png");
+        background-repeat: no-repeat;
+        background-position: 320px 30px;
     }
 
     .developer__title {
@@ -61,6 +64,10 @@
 
     .developer__info {
         order: 0;
+    }
+
+    .developer__photo {
+        background-image: none;
     }
 
     .button_position {
