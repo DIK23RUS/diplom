@@ -47,8 +47,12 @@
 }
 
 .custom-style {
+    font-size: 16px;
+    font-weight: 400;
+    padding: 10px 12px;
     background-color: #ff4e2e;
     border: #ff4e2e;
+    border-radius: 3px;
 }
 
 .custom-style:hover {
@@ -57,6 +61,16 @@
 
 .main {
     margin-top: 65px;
+}
+
+.input_style {
+    border: 1px solid #6c757d;
+    border-radius: 6px;
+    padding: 5px;
+}
+
+.input_style:focus {
+    box-shadow: 0px 0px 10px 2px #ff4e2e;
 }
 
 .developer {
@@ -539,4 +553,16 @@
 .copyright__info_position {
     padding-top: 13px;
     padding-bottom: 13px;
+}
+
+.js_name.js_error {
+    box-shadow: 0 0 15px #dc3545;
+}
+
+.js_tel.js_error {
+    box-shadow: 0 0 15px #dc3545;
+}
+
+.js_email.js_error {
+    box-shadow: 0 0 15px #dc3545;
 }
