@@ -1,53 +1,25 @@
 <?php
-    use PHPMailer\PHPMailer\PHPMailer;
-    use PHPMailer\PHPMailer\Exception;
+$name = $_POST['name'];
+$phone = $_POST['phone'];
+$email = $_POST['email'];
 
-    require 'PHPMailer/src/Exception.php';
-    require 'PHPMailer/src/PHPMailer.php';
+$name = htmlspecialchars($name);
+$phone = htmlspecialchars($phone);
+$email = htmlspecialchars($email);
 
-    $mail = new PHPMailer(true);
-    $mail->CharSet = 'UTF-8';
-    $mail->setLanguage('ru', 'PHPMailer/language/');
-    $mail->IsHTML(true);
+$name = urldecode($name);
+$phone = urldecode($phone);
+$email = urldecode($email);
 
-    //От кого письмо
-try {
-    $mail->setFrom('info@fls.guru', 'Фрилансер по жизни');
-} catch (Exception $e) {
+$name = trim($name);
+$phone = trim($phone);
+$email = trim($email);
+
+if (mail("dik23rus@gmail.com", "Заявка",
+    "Имя:".$name."\n"."Телефон:".$phone."\n"."Почта:".$email))
+{
+    echo "Ваш запрос принят, спасибо";
+} else {
+   echo "Произошла неведомая ошибка, мы разберемся, а Вы можете попробовать снова";
 }
-// Кому отправить
-try {
-    $mail->addAddress('dik23rus@gmail.com');
-} catch (Exception $e) {
-}
-//Тема письма
-    $mail->Subject = 'Привет! Это "Фрилансер по жизни"';
-
-    //Тело письма
-    $body = '<h1>Тестовое письмо</h1>';
-
-    if(trim(!empty($_POST['name']))){
-        $body.='<p><strong>Имя:</strong> '.$_POST['name'].'</p>';
-    }
-    if(trim(!empty($_POST['tel']))){
-        $body.='<p><strong>Телефон:</strong> '.$_POST['tel'].'</p>';
-    }
-    if(trim(!empty($_POST['email']))){
-        $body.='<p><strong>E-mail:</strong> '.$_POST['email'].'</p>';
-    }
-
-    //Отправляем
-try {
-    if ($mail->send()) {
-        $message = 'Ошибка PHP';
-    } else {
-        $message = 'Данные отправлены';
-    }
-} catch (Exception $e) {
-}
-
-$response = ['message' => $message];
-
-    header('Content-type: application/json');
-    echo  json_decode((string)$response);
 ?>

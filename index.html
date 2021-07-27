@@ -74,22 +74,22 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close js-reset" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="#" id="form-1">
+                    <form action="sendmail.php" method="post" id="form-1">
                         <div class="modal-body">
                             <label class="form-label">
                                 Ваше имя:
-                                <input type="text" name="text" class="input_style js_name js_req_1">
+                                <input type="text" name="name" class="input_style" required>
                             </label>
 
                             <label class="form-label">
                                 Номер телефона:
-                                <input type="tel" name="tel" class="input_style js_tel js_req_1">
+                                <input type="tel" name="phone" class="input_style" required>
                             </label>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                            <button type="button" class="btn btn-secondary js-reset" data-bs-dismiss="modal">Закрыть</button>
                             <input type="submit" class="custom-style">
                         </div>
                     </form>
@@ -104,21 +104,21 @@
                         <h5 class="modal-title" id="exampleMoreInfo">Форма обратной связи</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <form action="#" id="form-2">
+                    <form action="sendmail.php" method="post" id="form-2">
                         <div class="modal-body">
                             <label class="form-label">
                                 Ваше имя:
-                                <input type="text" name="name" class="input_style js_name js_req_2">
+                                <input type="text" name="name" class="input_style" required>
                             </label>
 
                             <label class="form-label">
                                 Номер телефона:
-                                <input type="tel" name="tel" class="input_style js_tel js_req_2">
+                                <input type="tel" name="phone" class="input_style" required>
                             </label>
 
                             <label class="form-label">
                                 Адрес электронной почты:
-                                <input type="email" name="email" class="input_style js_email js_req_2">
+                                <input type="email" name="email" class="input_style" required>
                             </label>
                         </div>
                         <div class="modal-footer">
@@ -339,9 +339,9 @@
 
     <script type="text/javascript" src="js/jquery-3.5.0.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script>
+    <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 
     <script type="text/javascript" src="js/nav-header.js"></script>
-    <script type="text/javascript" src="js/form_control.js"></script>
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -382,6 +382,32 @@
                         }
                     },
             ]
+            });
+
+            $("#form-1").validate({
+                rules: {
+                    field: {
+                        required: true
+                    }
+                },
+                messages: {
+                    name: "",
+                    phone: ""
+                }
+            });
+
+            $("#form-2").validate({
+                rules: {
+                    field: {
+                        required: true,
+                        email: true
+                    }
+                },
+                messages: {
+                    name: "",
+                    phone: "",
+                    email: "Формат не верен"
+                }
             });
         });
     </script>
