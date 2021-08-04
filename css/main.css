@@ -63,6 +63,17 @@
     margin-top: 65px;
 }
 
+.modal-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-label {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 115px;
+}
+
 .input_style {
     border: 1px solid #6c757d;
     border-radius: 6px;
@@ -78,7 +89,9 @@
 }
 
 #email-error {
-    margin-left: 240px;
+    font-size: 13px;
+    margin-left: 5px;
+    margin-right: -110px;
     margin-top: 10px;
 }
 
@@ -397,6 +410,13 @@
 
 .example-list__picture_style-c {
     background-image: url("../images/Example_3.jpg");
+    background-repeat: no-repeat;
+    background-position: -40px 0;
+    background-size: 140%;
+}
+
+.example-list__picture_style-d {
+    background-image: url("../images/Example_4.jpg");
     background-repeat: no-repeat;
     background-position: -40px 0;
     background-size: 140%;
