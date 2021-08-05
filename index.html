@@ -85,7 +85,7 @@
 
                             <label class="form-label">
                                 Номер телефона:
-                                <input type="tel" name="phone" class="input_style" placeholder="+7 (999) 999-99-99" required>
+                                <input type="tel" name="phone" class="input_style js-phone" required>
                             </label>
                         </div>
                         <div class="modal-footer">
@@ -113,7 +113,7 @@
 
                             <label class="form-label">
                                 Номер телефона:
-                                <input type="tel" name="phone" class="input_style" placeholder="+7 (999) 999-99-99" required>
+                                <input type="tel" name="phone" class="input_style js-phone" required>
                             </label>
 
                             <label class="form-label">
@@ -344,6 +344,7 @@
     <script type="text/javascript" src="slick/slick.min.js"></script>
     <script type="text/javascript" src="js/jquery.validate.min.js"></script>
     <script type="text/javascript" src="js/jquery.inputmask.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
 
     <script type="text/javascript" src="js/nav-header.js"></script>
 
@@ -395,7 +396,7 @@
             ]
             });
 
-            $('[type=tel]').inputmask("+7 (999) 999-99-99");
+            $('[type=tel]').inputmask("+7(999)999-9999");
 
             $("#form-1").validate({
                 rules: {
@@ -420,6 +421,20 @@
                     name: "",
                     phone: "",
                     email: "Формат не верен"
+                }
+            });
+
+            jQuery.validator.addMethod("checkMaskPhone", function (value, element) {
+                return /\+\d{1}\(\d{3}\)\d{3}-\d{4}/g.test(value);
+            });
+
+            var form_1 = $('#form-1');
+
+            form_1.validate();
+
+            $.validator.addClassRules({
+                'js-phone': {
+                    checkMaskPhone: true,
                 }
             });
 
