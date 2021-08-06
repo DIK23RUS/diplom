@@ -19,6 +19,8 @@ if (mail("dik23rus@gmail.com", "Заявка",
     "Имя:".$name."\n"."Телефон:".$phone."\n"."Почта:".$email))
 {
     echo "Ваш запрос принят, спасибо";
+    header("refresh: 1; url=http://pchelocentr.com/");
+
 } else {
    echo "Произошла неведомая ошибка, мы разберемся, а Вы можете попробовать снова";
 }
